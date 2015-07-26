@@ -1,12 +1,11 @@
-"use strict";
+'use strict';
 
 function elementInViewport(el) {
 
 	var elInViewport = false;
 
-	var i = 0;
 	for (var i = el.length - 1; i >= 0; i--) {
-		var elThis = el[i]
+		var elThis = el[i];
 		var rect = elThis.getBoundingClientRect();
 
 		if (rect.bottom > 0 &&
@@ -15,7 +14,7 @@ function elementInViewport(el) {
 			rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
 			elInViewport = elThis;
 	}
-};
+}
 
 return elInViewport;
 }
