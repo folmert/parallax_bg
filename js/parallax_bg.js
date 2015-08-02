@@ -1,4 +1,6 @@
 'use strict';
+querySelectorAll = document.querySelectorAll.bind(document);
+
 
 function elementInViewport(el) {
 
@@ -20,10 +22,10 @@ return elInViewport;
 }
 
 
-if(document.querySelectorAll('.parallax_bg').length) {
+if(querySelectorAll('.parallax_bg').length) {
 
 	window.addEventListener('scroll', function() {
-		var parallax_bg_visible = elementInViewport(document.querySelectorAll('.parallax_bg'));
+		var parallax_bg_visible = elementInViewport(querySelectorAll('.parallax_bg'));
 
 		if(parallax_bg_visible) {
 			var speed = 0.55;
