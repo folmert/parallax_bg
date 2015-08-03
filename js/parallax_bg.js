@@ -1,24 +1,26 @@
 'use strict';
-querySelectorAll = document.querySelectorAll.bind(document);
 
+var parallax_bg = (function () {
 
-function elementInViewport(el) {
+	querySelectorAll = document.querySelectorAll.bind(document);
 
-	var elInViewport = false;
+	function elementInViewport(el) {
 
-	for (var i = el.length - 1; i >= 0; i--) {
-		var elThis = el[i];
-		var rect = elThis.getBoundingClientRect();
+		var elInViewport = false;
 
-		if (rect.bottom > 0 &&
-			rect.right > 0 &&
-			rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-			rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
-			elInViewport = elThis;
+		for (var i = el.length - 1; i >= 0; i--) {
+			var elThis = el[i];
+			var rect = elThis.getBoundingClientRect();
+
+			if (rect.bottom > 0 &&
+				rect.right > 0 &&
+				rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+				rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
+				elInViewport = elThis;
+		}
 	}
-}
 
-return elInViewport;
+	return elInViewport;
 }
 
 
@@ -36,3 +38,5 @@ if(querySelectorAll('.parallax_bg').length) {
 	});
 
 }
+
+})();
