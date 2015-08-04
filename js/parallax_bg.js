@@ -2,7 +2,7 @@
 
 var parallax_bg = (function () {
 
-	querySelectorAll = document.querySelectorAll.bind(document);
+	var querySelectorAll = document.querySelectorAll.bind(document);
 
 	function elementInViewport(el) {
 
@@ -40,3 +40,6 @@ if(querySelectorAll('.parallax_bg').length) {
 }
 
 })();
+
+// TODO: optional config for choosing custom element's class
+	
